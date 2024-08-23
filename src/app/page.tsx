@@ -1,12 +1,12 @@
-import { Banner } from "@/components/Banner";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { LogoTicker } from "@/components/LogoTicker";
-import { Features } from "@/components/Features";
-import { ProductShowcase } from "@/components/ProductShowcase";
-import { FAQs } from "@/components/FAQs";
-import { CallToAction } from "@/components/CallToAction";
-import { Footer } from "@/components/Footer";
+import { Banner } from "@/sections/Banner";
+import { Navbar } from "@/sections/Navbar";
+import { Hero } from "@/sections/Hero";
+import { LogoTicker } from "@/sections/LogoTicker";
+import { Features } from "@/sections/Features";
+import { ProductShowcase } from "@/sections/ProductShowcase";
+import { FAQs } from "@/sections/FAQs";
+import { CallToAction } from "@/sections/CallToAction";
+import { Footer } from "@/sections/Footer";
 
 export default function Home() {
   return (
