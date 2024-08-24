@@ -24,7 +24,7 @@ export const LogoTicker = () => {
         <div className="overflow-hidden mt-9 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <div className="flex gap-16">
             {images.map(({ src, alt }) => (
-              <Image src={src} alt={alt} className="flex-none h-8 w-auto" />
+              <Image key={alt} src={src} alt={alt} className="flex-none h-8 w-auto" />
             ))}
           </div>
         </div>
