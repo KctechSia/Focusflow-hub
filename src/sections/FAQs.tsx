@@ -1,3 +1,6 @@
+import { AccordionItem } from "@/components/AccordionItem";
+
+
 const items = [
   {
     question: "What payment methods do you accept?",
@@ -22,5 +25,16 @@ const items = [
 ];
 
 export const FAQs = () => {
-  return null;
+  return (
+    <section className="text-white py-[72px] md:py-24 bg-gradient-to-b from-[#5f2ca8] to-black">
+      <div className="container">
+        <h2 className="text-5xl md:text-6xl lg:max-w-[648px] mx-auto text-center font-bold tracking-tighter">Frequently asked questions</h2>
+        <div className="mt-12 max-w-[648px] mx-auto">
+          {items.map(({ question, answer }) => (
+            <AccordionItem key={question} question={question} answer={answer} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
