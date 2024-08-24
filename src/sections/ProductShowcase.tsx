@@ -27,6 +27,7 @@ export const ProductShowcase = () => {
           style={{
             opacity,
             rotateX,
+            transformPerspective: "800px",
           }}
         >
           <Image ref={imageRef} src={appScreen} alt="Product screenshot" className="mt-14" />
