@@ -9,7 +9,7 @@ declare global {
 
 export const CalendlyWidget = () => {
   useEffect(() => {
-    // ✅ Avoid adding the script multiple times
+    //To avoid adding the script multiple times
     if (document.getElementById("calendly-widget-script")) return;
 
     const script = document.createElement("script");
@@ -30,13 +30,13 @@ export const CalendlyWidget = () => {
       }
     };
 
-    // ✅ Optional cleanup (in case of page transitions)
+    //  Optional cleanup (in case of page transitions)
     return () => {
       const badge = document.querySelector(".calendly-badge-widget");
       if (badge) badge.remove();
     };
   }, []);
 
-  // ✅ Nothing visible rendered directly
+  // Nothing visible rendered directly
   return null;
 };

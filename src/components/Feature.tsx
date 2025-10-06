@@ -16,7 +16,7 @@ export const Feature = ({
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(100px 100px at ${offsetX}px ${offsetY}px, black, transparent)`;
 
-  // ✅ Memoize the function so it doesn’t change every render
+  //  Memoize the function so it doesn’t change every render
   const updateMousePosition = useCallback((e: MouseEvent) => {
     if (!borderRef.current) return;
     const borderRect = borderRef.current.getBoundingClientRect();
@@ -25,7 +25,7 @@ export const Feature = ({
   }, [offsetX, offsetY]);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // ✅ Guard for SSR
+    if (typeof window === "undefined") return; //  Guard for SSR
 
     window.addEventListener("mousemove", updateMousePosition);
     return () => window.removeEventListener("mousemove", updateMousePosition);

@@ -6,7 +6,7 @@ export const CalendlyWidget = () => {
   const modalRef = useRef<HTMLDivElement>(null);
   const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
 
-  // ✅ Only run after the component is mounted in the browser
+  //  Only run after the component is mounted in the browser
   useEffect(() => {
     setRootElement(document.getElementById("root"));
   }, []);
