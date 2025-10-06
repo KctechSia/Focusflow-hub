@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/Focusflow-hub",
-  assetPrefix: "/Focusflow-hub/",
+  //basePath: "/Focusflow-hub",
+ // assetPrefix: "/Focusflow-hub/",
   trailingSlash: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
