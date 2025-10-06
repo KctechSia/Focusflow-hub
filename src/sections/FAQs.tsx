@@ -1,3 +1,4 @@
+"use client";
 import { AccordionItem } from "@/components/AccordionItem";
 
 
@@ -28,7 +29,11 @@ const items = [
       "Our clients typically save 10–20 hours weekly and increase qualified lead conversions by up to 3× within the first 30 days."
   }
 ];
+import React, { useState } from "react";
+
 export const FAQs = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section 
     id="faq"
@@ -36,8 +41,14 @@ export const FAQs = () => {
       <div className="container">
         <h2 className="text-5xl md:text-6xl lg:max-w-[648px] mx-auto text-center font-bold tracking-tighter">Frequently asked questions</h2>
         <div className="mt-12 max-w-[648px] mx-auto">
-          {items.map(({ question, answer }) => (
-            <AccordionItem key={question} question={question} answer={answer} />
+          {items.map(({ question, answer }, idx) => (
+            <AccordionItem
+              key={question}
+              question={question}
+              answer={answer}
+              isOpen={openIndex === idx}
+              onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
+            />
           ))}
         </div>
       </div>

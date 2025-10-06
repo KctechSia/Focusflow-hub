@@ -1,10 +1,12 @@
 {
-  "name": "saas-website-dark-landing-page",
+  "name": "Focusflowhub",
   "version": "0.1.0",
+  "homepage": "https://KctechSia.github.io/Focusflow-hub",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
+    "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
   },
@@ -18,6 +20,7 @@
     "react": "^18",
     "react-calendly": "^4.4.0",
     "react-dom": "^18",
+    "sharp": "^0.34.4",
     "sonner": "^2.0.7"
   },
   "devDependencies": {
@@ -25,10 +28,12 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
     "typescript": "^5"
   }
 }

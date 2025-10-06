@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import MenuIcon from "@/assets/icons/menu.svg";
 import logoImage from "@/assets/images/logo.png";
-import { CalendlyWidget } from "@/components/CalendlyWidget";
+import { CalendlyWidget } from "@/components/calendlywidget";
 
 export const Navbar = () => {
   

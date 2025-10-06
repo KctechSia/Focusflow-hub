@@ -1,3 +1,4 @@
+"use client";
 import { Feature } from "@/components/Feature";
 import { MessageSquare, Mail, Linkedin, Phone, LucideWorkflow, BarChart3, LineChartIcon, ChartAreaIcon } from "lucide-react";
 

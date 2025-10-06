@@ -24,9 +24,9 @@ export default function RootLayout({
       <body className={clsx(dmSans.className, "antialiased")}>
         {children}
 
-     
+        {/* ✅ Calendly widget safely loaded inside <body> */}
+        <CalendlyWidget />
       </body>
-      <CalendlyWidget />
     </html>
   );
 }

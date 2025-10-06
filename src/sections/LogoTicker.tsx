@@ -1,51 +1,8 @@
 "use client";
-//import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users, Briefcase, TrendingUp, Building2, UserCheck } from "lucide-react"; // icons
-import React from "react";
-/* import acmeLogo from "../assets/images/acme.png";
-import quantumLogo from "../assets/images/quantum.png";
-import echoLogo from "../assets/images/echo.png";
-import celestialLogo from "../assets/images/celestial.png";
-import pulseLogo from "../assets/images/pulse.png";
-import apexLogo from "../assets/images/apex.png";
-
-const images = [
-  { src: acmeLogo, alt: "Acme Logo" },
-  { src: quantumLogo, alt: "Quantum Logo" },
-  { src: echoLogo, alt: "Echo Logo" },
-  { src: celestialLogo, alt: "Celestial Logo" },
-  { src: pulseLogo, alt: "Pulse Logo" },
-  { src: apexLogo, alt: "Apex Logo" },
-];
+import { Users, Briefcase, TrendingUp, Building2, UserCheck } from "lucide-react";
 
 export const LogoTicker = () => {
-  return (
-    <section className="bg-black text-white py-[72px] md:py-24">
-      <div className="container">
-        <h2 className="text-xl text-center text-white/70">Trusted by the world&apos;s most innovative teams</h2>
-        <div className="flex overflow-hidden mt-9 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-          <motion.div
-            initial={{ translateX: "0" }}
-            animate={{ translateX: "-50%" }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="flex flex-none gap-16 pr-16"
-          >
-            {[...images, ...images].map(({ src, alt }, index) => (
-              <Image key={`${alt}-${index}`} src={src} alt={alt} className="flex-none h-8 w-auto" />
-            ))}
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}; */
-export const LogoTicker = () => {
-  // Instead of images, define your consulting audience
   const audiences = [
     { icon: Users, label: "Solo Consultant" },
     { icon: Briefcase, label: "Boutique Agency" },
@@ -55,29 +12,32 @@ export const LogoTicker = () => {
   ];
 
   return (
-    <section className="bg-black text-white py-[72px] md:py-24">
+    <section className="relative bg-black text-white py-[72px] md:py-24">
+      {/* optional top accent line */}
+      <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-amber-400/0 via-amber-400/50 to-amber-400/0" />
+
       <div className="container mx-auto">
         <h2 className="text-xl text-center text-white/70">
           The consulting teams we&apos;re most beneficial to
         </h2>
 
-        <div className="flex overflow-hidden mt-9 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+        <div className="group flex overflow-hidden mt-9 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <motion.div
-            initial={{ translateX: "0" }}
-            animate={{ translateX: "-50%" }}
+            initial={{ translateX: "0%" }}
+            animate={{ translateX: "-33.333%" }}
             transition={{
-              duration: 25,
+              duration: 40,
               repeat: Infinity,
               ease: "linear",
             }}
-            className="flex flex-none gap-16 pr-16"
+            className="flex flex-none gap-8 md:gap-16 pr-8 md:pr-16 group-hover:[animation-play-state:paused]"
           >
-            {[...audiences, ...audiences].map(({ icon: Icon, label }, index) => (
+            {[...audiences, ...audiences, ...audiences].map(({ icon: Icon, label }, index) => (
               <div
                 key={`${label}-${index}`}
                 className="flex flex-col items-center text-gray-300 flex-none"
               >
-                <Icon className="h-8 w-8 text-amber-400 mb-2" />
+                <Icon className="h-6 w-6 md:h-8 md:w-8 text-amber-400 mb-2" />
                 <span className="text-sm">{label}</span>
               </div>
             ))}

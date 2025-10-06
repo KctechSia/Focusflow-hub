@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, useCallback, ReactNode } from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
 export const Feature = ({
@@ -16,17 +16,20 @@ export const Feature = ({
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(100px 100px at ${offsetX}px ${offsetY}px, black, transparent)`;
 
-  const updateMousePosition = (e: MouseEvent) => {
+  // ✅ Memoize the function so it doesn’t change every render
+  const updateMousePosition = useCallback((e: MouseEvent) => {
     if (!borderRef.current) return;
     const borderRect = borderRef.current.getBoundingClientRect();
     offsetX.set(e.x - borderRect.x);
     offsetY.set(e.y - borderRect.y);
-  };
+  }, [offsetX, offsetY]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // ✅ Guard for SSR
+
     window.addEventListener("mousemove", updateMousePosition);
     return () => window.removeEventListener("mousemove", updateMousePosition);
-  }, []);
+  }, [updateMousePosition]);
 
   return (
     <div className="relative border border-white/30 px-5 py-10 text-center rounded-xl sm:flex-1">
