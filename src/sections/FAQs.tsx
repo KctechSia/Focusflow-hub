@@ -3,30 +3,36 @@ import { AccordionItem } from "@/components/AccordionItem";
 
 const items = [
   {
-    question: "What payment methods do you accept?",
+    question: "How does the Lead Qualifying System work?",
     answer:
-      "We accept all major credit cards, PayPal, and various other payment methods depending on your location. Please contact our support team for more information on accepted payment methods in your region.",
+      "Once a lead submits a form, our AI agent follows up automatically via SMS, email, or call, qualifying them based on your business rules and updating your CRM instantly."
   },
   {
-    question: "How does the pricing work for teams?",
+    question: "Can I integrate it with my existing CRM?",
     answer:
-      "Our pricing is per user, per month. This means you only pay for the number of team members you have on your account. Discounts are available for larger teams and annual subscriptions.",
+      "Yes. We support integrations with HubSpot, Pipedrive, Salesforce, and custom databases via API or webhooks."
   },
   {
-    question: "Can I change my plan later?",
+    question: "Will the AI sound human when calling?",
     answer:
-      "Yes, you can upgrade or downgrade your plan at any time. Changes to your plan will be prorated and reflected in your next billing cycle.",
+      "Absolutely. Our AI voice agents are trained to sound natural, empathetic, and context-aware, ideal for professional consulting firms."
   },
   {
-    question: "Is my data secure?",
+    question: "How secure is client data?",
     answer:
-      "Security is our top priority. We use state-of-the-art encryption and comply with the best industry practices to ensure that your data is stored securely and accessed only by authorized users.",
+      "All data is encrypted end-to-end and stored securely in compliance with GDPR and business-grade security standards."
   },
+  {
+    question: "What results can I expect?",
+    answer:
+      "Our clients typically save 10–20 hours weekly and increase qualified lead conversions by up to 3× within the first 30 days."
+  }
 ];
-
 export const FAQs = () => {
   return (
-    <section className="text-white py-[72px] md:py-24 bg-gradient-to-b from-[#5f2ca8] to-black">
+    <section 
+    id="faq"
+    className="text-white py-[72px] md:py-24 bg-gradient-to-b from-[#5f2ca8] to-black rounded-2xl shadow-2xl">
       <div className="container">
         <h2 className="text-5xl md:text-6xl lg:max-w-[648px] mx-auto text-center font-bold tracking-tighter">Frequently asked questions</h2>
         <div className="mt-12 max-w-[648px] mx-auto">
