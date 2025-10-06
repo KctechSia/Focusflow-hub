@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # or 'main' if your repo uses that branch
+      - master  # Change to 'main' if your repo uses main
 
 permissions:
   contents: write
@@ -30,16 +30,25 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # ✅ Build with Supabase environment variables injected
       - name: Build static site
         run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
+      # ✅ Export static site for GitHub Pages
       - name: Export static site
         run: npm run export
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
+      # ✅ Upload exported folder as artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out  # 👈 The folder Next.js exports to
+          path: ./out  # Folder Next.js exports to
 
   deploy:
     needs: build
@@ -47,6 +56,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
