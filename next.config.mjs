@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // required for GitHub Pages
   },
-  basePath: "/focusflow-hub", // 👈 must match your repo EXACTLY
-  assetPrefix: "/focusflow-hub/", // 👈 add this line too
+  basePath: "/Focusflow-hub", // 👈 must match your repo EXACTLY
+  assetPrefix: "/Focusflow-hub/", // 👈 add this line too
   trailingSlash: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
