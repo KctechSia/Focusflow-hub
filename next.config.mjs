@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // enables static export
+  output: "export",
   images: {
-    unoptimized: true, // required for GitHub Pages
+    unoptimized: true,
   },
-  basePath: "/Focusflow-hub", // 👈 must match your repo EXACTLY
-  assetPrefix: "/Focusflow-hub/", // 👈 add this line too
+  basePath: "/Focusflow-hub",
+  assetPrefix: "/Focusflow-hub/",
   trailingSlash: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -31,4 +31,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig; // <-- for CommonJS projects

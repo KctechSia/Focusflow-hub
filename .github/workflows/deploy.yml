@@ -3,7 +3,7 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - master  # change to 'main' if your default branch is main
+      - master # or 'main' if that's your default branch
 
 permissions:
   contents: write
