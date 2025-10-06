@@ -27,23 +27,27 @@ export default function Footer() {
 
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-gradient-to-b from-slate-900 to-[#5d2ca8] text-white border-t border-amber-500/20 mt-16"
+      className="bg-gradient-to-b from-slate-900 to-[#5d2ca8] text-white border-t border-amber-500/20 mt-20"
     >
-      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         
         {/* Newsletter */}
         <div>
-          <h3 className="text-lg font-semibold text-amber-400 mb-2">Stay in the Loop</h3>
-          <p className="text-sm text-gray-300 mb-4 leading-relaxed">
-            Join our newsletter for automation insights, product updates, and exclusive growth tips.
+          <h3 className="text-lg font-semibold text-amber-400 mb-3">
+            Stay in the Loop
+          </h3>
+          <p className="text-sm text-gray-300 mb-5 leading-relaxed">
+            Join our newsletter for automation insights, product updates, and
+            exclusive growth tips.
           </p>
+
           <form
             onSubmit={handleSubmit}
-            className="flex bg-white/10 rounded-lg overflow-hidden border border-white/20 focus-within:ring-2 focus-within:ring-amber-400"
+            className="flex flex-col sm:flex-row bg-white/10 rounded-lg overflow-hidden border border-white/20 focus-within:ring-2 focus-within:ring-amber-400"
           >
             <input
               type="email"
@@ -56,7 +60,7 @@ export default function Footer() {
             <button
               type="submit"
               disabled={loading}
-              className="bg-amber-500 text-slate-900 px-4 py-2 text-sm font-semibold hover:bg-amber-400 transition disabled:opacity-50"
+              className="bg-amber-500 text-slate-900 px-4 py-2 text-sm font-semibold hover:bg-amber-400 transition disabled:opacity-50 mt-2 sm:mt-0"
             >
               {loading ? "..." : "Join"}
             </button>
@@ -65,26 +69,33 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-sm font-semibold text-amber-400 mb-3">Contact Us</h4>
+          <h4 className="text-sm font-semibold text-amber-400 mb-3">
+            Contact Us
+          </h4>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>focusflowhubinquiry@gmail.com</li>
-            <li>+234 9073858632</li>
+            <li>+234 907 385 8632</li>
             <li>Lagos, Nigeria</li>
           </ul>
         </div>
 
         {/* About */}
         <div className="md:col-span-2">
-          <h4 className="text-sm font-semibold text-amber-400 mb-3">About Us</h4>
+          <h4 className="text-sm font-semibold text-amber-400 mb-3">
+            About Us
+          </h4>
           <p className="text-sm text-gray-300 leading-relaxed">
-            At FocusFlow Hub, we’re redefining how consultants work. Our automation platform turns hours of manual client handling into seamless, intelligent workflows—helping consultants grow faster and work smarter.
+            At FocusFlow Hub, we’re redefining how consultants work. Our
+            automation platform turns hours of manual client handling into
+            seamless, intelligent workflows — helping consultants grow faster
+            and work smarter.
           </p>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 mt-8">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-2">
+      <div className="border-t border-white/10 mt-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-4 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400 gap-3 text-center sm:text-left">
           <p>© 2025 FocusFlow Hub. All rights reserved.</p>
           <p className="text-amber-400">Empowering Consultants with AI</p>
         </div>

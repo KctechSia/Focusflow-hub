@@ -12,16 +12,17 @@ export const LogoTicker = () => {
   ];
 
   return (
-    <section className="relative bg-black text-white py-[72px] md:py-24">
-      {/* optional top accent line */}
+    <section className="relative bg-black text-white py-16 sm:py-20 md:py-24 overflow-hidden">
+      {/* 🔸 Optional top accent line */}
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-amber-400/0 via-amber-400/50 to-amber-400/0" />
 
-      <div className="container mx-auto">
-        <h2 className="text-xl text-center text-white/70">
+      <div className="container mx-auto px-4 md:px-8">
+        <h2 className="text-base sm:text-lg md:text-xl text-center text-white/70 font-medium">
           The consulting teams we&apos;re most beneficial to
         </h2>
 
-        <div className="group flex overflow-hidden mt-9 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+        <div className="group flex overflow-hidden mt-9 
+                        [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
           <motion.div
             initial={{ translateX: "0%" }}
             animate={{ translateX: "-33.333%" }}
@@ -30,17 +31,20 @@ export const LogoTicker = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="flex flex-none gap-8 md:gap-16 pr-8 md:pr-16 group-hover:[animation-play-state:paused]"
+            className="flex flex-none gap-6 sm:gap-10 md:gap-16 pr-8 md:pr-16 
+                       group-hover:[animation-play-state:paused]"
           >
-            {[...audiences, ...audiences, ...audiences].map(({ icon: Icon, label }, index) => (
-              <div
-                key={`${label}-${index}`}
-                className="flex flex-col items-center text-gray-300 flex-none"
-              >
-                <Icon className="h-6 w-6 md:h-8 md:w-8 text-amber-400 mb-2" />
-                <span className="text-sm">{label}</span>
-              </div>
-            ))}
+            {[...audiences, ...audiences, ...audiences].map(
+              ({ icon: Icon, label }, index) => (
+                <div
+                  key={`${label}-${index}`}
+                  className="flex flex-col items-center flex-none text-gray-300"
+                >
+                  <Icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-amber-400 mb-2" />
+                  <span className="text-xs sm:text-sm md:text-base">{label}</span>
+                </div>
+              )
+            )}
           </motion.div>
         </div>
       </div>

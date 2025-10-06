@@ -12,7 +12,7 @@ export const ProductShowcase = () => {
     setIsMounted(true);
   }, []);
 
-  // ✅ Guard so Framer Motion only attaches scroll after mount
+  // Enable scroll-based animation only after mount (to avoid hydration issues)
   const { scrollYProgress } = useScroll({
     target: imageRef,
     offset: ["start end", "end end"],
@@ -24,39 +24,45 @@ export const ProductShowcase = () => {
   return (
     <section
       id="results"
-      className="text-white py-[72px] md:py-24 bg-gradient-to-b from-black to-[#5d2ca8]"
+      className="text-white bg-gradient-to-b from-black to-[#5d2ca8] py-16 sm:py-20 md:py-24"
     >
-      <div className="container">
-        <h2 className="text-center text-5xl md:text-6xl font-bold tracking-tighter">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        {/* Heading */}
+        <h2 className="text-center text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight leading-tight">
           Work Less, Earn More
         </h2>
 
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xl text-center text-white/70 mt-5">
-            Celebrate the joy of accomplishment with zero missed leads, instant
-            responses, consistent qualification, and 10–20 hours saved weekly.
+        {/* Subtext */}
+        <div className="max-w-3xl mx-auto mt-5">
+          <p className="text-base sm:text-lg md:text-xl text-center text-white/70 leading-relaxed">
+            Celebrate the joy of accomplishment with zero missed leads,
+            instant responses, consistent qualification, and 10–20 hours saved
+            weekly — all powered by automation that scales with you.
           </p>
-
-          {isMounted && (
-            <motion.div
-              ref={imageRef}
-              style={{
-                opacity,
-                rotateX,
-                transformPerspective: "800px",
-              }}
-              className="mt-20"
-            >
-              <Image
-                src={appScreen}
-                alt="Product screenshot"
-                width={2400}
-                height={1800}
-                className="mx-auto rounded-2xl shadow-2xl border border-white/20 w-full max-w-6xl"
-              />
-            </motion.div>
-          )}
         </div>
+
+        {/* Animated Product Image */}
+        {isMounted && (
+          <motion.div
+            ref={imageRef}
+            style={{
+              opacity,
+              rotateX,
+              transformPerspective: "800px",
+            }}
+            className="mt-12 sm:mt-16 md:mt-20"
+          >
+            <Image
+              src={appScreen}
+              alt="FocusFlow Hub product screenshot"
+              width={2400}
+              height={1800}
+              priority
+              className="mx-auto w-full max-w-[95%] sm:max-w-3xl md:max-w-5xl lg:max-w-6xl 
+                         rounded-2xl border border-white/20 shadow-2xl"
+            />
+          </motion.div>
+        )}
       </div>
     </section>
   );
