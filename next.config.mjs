@@ -31,4 +31,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig; // <-- for CommonJS projects
+export default nextConfig; // ✅ Use ES module export syntax
