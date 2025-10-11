@@ -73,7 +73,7 @@ export default function Footer() {
             Contact Us
           </h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>focusflowhubinquiry@gmail.com</li>
+            <li>info@focusflow-hub.com</li>
             <li>+234 907 385 8632</li>
             <li>Lagos, Nigeria</li>
           </ul>
@@ -87,7 +87,7 @@ export default function Footer() {
           <p className="text-sm text-gray-300 leading-relaxed">
             At FocusFlow Hub, we’re redefining how consultants work. Our
             automation platform turns hours of manual client handling into
-            seamless, intelligent workflows — helping consultants grow faster
+            seamless, intelligent workflows helping consultants grow faster
             and work smarter.
           </p>
         </div>

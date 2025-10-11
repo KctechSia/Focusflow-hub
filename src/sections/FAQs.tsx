@@ -16,7 +16,7 @@ const items = [
   {
     question: "Will the AI sound human when calling?",
     answer:
-      "Absolutely. Our AI voice agents are trained to sound natural, empathetic, and context-aware — ideal for professional consulting firms.",
+      "Absolutely. Our AI voice agents are trained to sound natural, empathetic, and context-aware ideal for professional consulting firms.",
   },
   {
     question: "How secure is client data?",
@@ -47,7 +47,7 @@ export const FAQs = () => {
         {/* Subtext */}
         <p className="text-center text-base sm:text-lg text-white/70 mt-4 mb-10 sm:mb-14 max-w-2xl mx-auto leading-relaxed">
           Everything you need to know about how FocusFlow Hub automates your
-          client management — from integrations to performance results.
+          client management, from integrations to performance results.
         </p>
 
         {/* Accordion List */}

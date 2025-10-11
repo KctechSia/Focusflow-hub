@@ -78,7 +78,7 @@ export const Hero = () => {
         {/* Description */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mt-10">
           <p className="text-lg sm:text-xl text-center md:text-right md:max-w-md leading-relaxed">
-            Your prospects reach out at all hours through multiple channels — website forms,
+            Your prospects reach out at all hours through multiple channels; website forms,
             email, LinkedIn DMs, Facebook messages, text messages. Missing even one means losing
             potential clients to competitors.
           </p>

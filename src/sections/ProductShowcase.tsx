@@ -37,7 +37,7 @@ export const ProductShowcase = () => {
           <p className="text-base sm:text-lg md:text-xl text-center text-white/70 leading-relaxed">
             Celebrate the joy of accomplishment with zero missed leads,
             instant responses, consistent qualification, and 10–20 hours saved
-            weekly — all powered by automation that scales with you.
+            weekly, all powered by automation that scales with you.
           </p>
         </div>
 
